@@ -1,0 +1,88 @@
+body{
+    margin:0;
+    padding:0;
+    background: linear-gradient(to bottom, #800000, #4b0000);
+    font-family: 'Georgia', serif;
+    overflow-x:hidden;
+}
+
+/* ===== SECTION ===== */
+.ganesh-section{
+    position:relative;
+    text-align:center;
+    padding:80px 20px;
+    color:#F8F4EC;
+}
+
+/* ===== GANESH IMAGE ===== */
+.ganesh-img{
+    width:280px;
+    max-width:90%;
+    animation: float 4s ease-in-out infinite;
+    filter: drop-shadow(0 0 25px #D4AF37);
+    z-index:2;
+    position:relative;
+}
+
+@keyframes float{
+    0%{transform: translateY(0px);}
+    50%{transform: translateY(-20px);}
+    100%{transform: translateY(0px);}
+}
+
+/* ===== FLOWER RAIN ===== */
+.flower{
+    position:absolute;
+    top:-50px;
+    font-size:24px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall{
+    0%{transform: translateY(-50px) rotate(0deg);}
+    100%{transform: translateY(100vh) rotate(360deg);}
+}
+
+/* ===== WOMEN IMAGES ===== */
+.women{
+    position:absolute;
+    bottom:0;
+    width:180px;
+    filter: drop-shadow(0 0 15px #D4AF37);
+}
+
+.left-woman{
+    left:5%;
+}
+
+.right-woman{
+    right:5%;
+}
+
+/* ===== AARTI THALI ===== */
+.aarti-thali{
+    margin-top:30px;
+    font-size:60px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{ text-shadow:0 0 10px orange;}
+    to{ text-shadow:0 0 30px gold;}
+}
+
+/* ===== 3D EFFECT ===== */
+.ganesh-container{
+    transform-style: preserve-3d;
+    perspective:1000px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+    .women{
+        width:120px;
+    }
+    .ganesh-img{
+        width:200px;
+    }
+}

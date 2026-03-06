@@ -57,29 +57,29 @@
             var music = document.getElementById("bgMusic");
             music.play();
         }, { once: true });
-        // / Countdown Timer
-        function updateCountdown() {
-            const weddingDate = new Date('2026-03-15T09:00:00').getTime();
-            const now = new Date().getTime();
-            const distance = weddingDate - now;
+        // // // / Countdown Timer
+        //  function updateCountdown() {
+        //     const weddingDate = new Date('2026-03-15T09:00:00').getTime();
+        //     const now = new Date().getTime();
+        //     const distance = weddingDate - now;
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 17));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 17)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        //      const days = Math.floor(distance / (1000 * 60 * 60 * 13));
+        //      const hours = Math.floor((distance % (1000 * 60 * 60 * 13)) / (1000 * 60 * 60));
+        //    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        //      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            document.getElementById('days').textContent = String(days).padStart(2, '0');
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        //      document.getElementById('days').textContent = String(days).padStart(2, '0');
+        //      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+        //      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+        //      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
 
-            if (distance < 0) {
-                document.getElementById('countdown').innerHTML = '<h3 style="color: var(--gold); font-family: Cinzel, serif;">The Wedding Day Has Arrived! ðŸŽ‰</h3>';
-            }
-        }
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
+        //      if (distance < 0) {
+        //         document.getElementById('countdown').innerHTML = '<h3 style="color: var(--gold); font-family: Cinzel, serif;">The Wedding Day Has Arrived! ðŸŽ‰</h3>';
+        //    }
+        // }
+        // // Update countdown every second
+        // setInterval(updateCountdown, 1000);
+        // updateCountdown(); // Initial call
             
 // ===================================
 // RSVP FORM SUBMISSION

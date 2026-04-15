@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Stylish Calculator</title>
+
+<style>
+/* Animated Gradient Background */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background: linear-gradient(-45deg, #1e3c72, #2a5298, #6a11cb, #ff6a00);
+    background-size: 400% 400%;
+    animation: gradientBG 8s ease infinite;
+
+    font-family: Arial, sans-serif;
+}
+
+/* Animation */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glass Calculator */
+.calculator {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 25px;
+    border-radius: 20px;
+
+    box-shadow: 0 0 30px rgba(0,0,0,0.6);
+}
+
+/* Display */
+#display {
+    width: 100%;
+    height: 55px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+/* Buttons Grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 65px);
+    gap: 10px;
+}
+
+/* Buttons Style */
+button {
+    height: 55px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    background: rgba(255,255,255,0.2);
+    color: white;
+
+    transition: 0.3s;
+}
+
+/* Hover Effect */
+button:hover {
+    background: rgba(255,255,255,0.5);
+    transform: scale(1.1);
+}
+
+/* Special Buttons */
+.operator {
+    background: #ff9800;
+}
+
+.equal {
+    background: #00c853;
+}
+
+.clear {
+    background: #ff1744;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="calculator">
+    <input type="text" id="display" disabled>
+
+    <div class="buttons">
+        <button onclick="clearDisplay()" class="clear">C</button>
+        <button onclick="appendValue('/')">/</button>
+        <button onclick="appendValue('*')">*</button>
+        <button onclick="appendValue('-')">-</button>
+       
+
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('+')" class="operator">+</button>
+
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="calculate()" class="equal">=</button>
+
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('0')">0</button>
+         <div class="buttons">
+    <!-- <button onclick="clearDisplay()" class="clear">C</button> -->
+    <button onclick="deleteLast()">⌫</button>
+    <!-- <button onclick="appendValue('/')">/</button>
+    <button onclick="appendValue('*')">*</button> -->
+    </div>
+</div>
+
+<script>
+function appendValue(value) {
+    document.getElementById("display").value += value;
+}
+
+function clearDisplay() {
+    document.getElementById("display").value = "";
+}
+
+function calculate() {
+    try {
+        document.getElementById("display").value =
+            eval(document.getElementById("display").value);
+    } catch {
+        alert("Invalid Input");
+    }
+}
+function deleteLast() {
+    let display = document.getElementById("display");
+    display.value = display.value.slice(0, -1);
+}
+</script>
+
+</body>
+</html>
